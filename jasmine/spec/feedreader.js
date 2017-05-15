@@ -112,19 +112,19 @@ $(function() {
        */
       var firstLoad, secondLoad;
       beforeEach(function(done) {
-        // Load the first feed and set the html content to a variable
+        // Load the first feed and get the length of the html content to a variable
         loadFeed(0, function() {
-          firstLoad = $('.feed').html();
+          firstLoad = $('.feed').html().length;
         });
-        // Load the next feed and set html to another variable.
+        // Load the next feed and get the length of the html to another variable.
         loadFeed(1, function() {
-          secondLoad = $('.feed').html();
+          secondLoad = $('.feed').html().length;
           done();
         });
       });
 
       it('does change content of feeds from loadFeed function', function(done) {
-        // the two variables of html should be different if different content.
+        // the two variables of html length should be different if different content.
         expect(firstLoad).not.toEqual(secondLoad);
         done();
       });
