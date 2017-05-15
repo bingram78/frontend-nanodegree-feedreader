@@ -34,7 +34,7 @@ $(function() {
         it('each URL defined and not empty', function() {
           for (var i = 0; i < allFeeds.length; i++) {
             expect(allFeeds[i].url).toBeDefined();
-            expect(allFeeds[i].url).not.toBe(null);
+            expect(allFeeds[i].url).not.toBe('');
           }
         });
 
@@ -46,7 +46,7 @@ $(function() {
         it('has name and name is not empty', function() {
           for (var i = 0; i <allFeeds.length; i++) {
             expect(allFeeds[i].name).toBeDefined();
-            expect(allFeeds[i].name).not.toBe(null);
+            expect(allFeeds[i].name).not.toBe('');
           }
         });
     });
@@ -96,12 +96,11 @@ $(function() {
       });
 
       it('has loadFeed with at least a single entry', function(done) {
-        var feed = $('.feed');
+        var feed = $('.feed .entry');
         expect(feed.length).toBeGreaterThan(0);
         done();
       });
     });
-
 
 
     /*  Write a new test suite named "New Feed Selection" */
@@ -114,19 +113,18 @@ $(function() {
       beforeEach(function(done) {
         // Load the first feed and get the length of the html content to a variable
         loadFeed(0, function() {
-          firstLoad = $('.feed').html().length;
-        });
+          firstLoad = $('.feed').html();
+          loadFeed(1, function() {
         // Load the next feed and get the length of the html to another variable.
-        loadFeed(1, function() {
-          secondLoad = $('.feed').html().length;
-          done();
+            secondLoad = $('.feed').html();
+            done();
+          });
         });
       });
 
-      it('does change content of feeds from loadFeed function', function(done) {
+      it('does change content of feeds from loadFeed function', function() {
         // the two variables of html length should be different if different content.
         expect(firstLoad).not.toEqual(secondLoad);
-        done();
       });
     });
 }());

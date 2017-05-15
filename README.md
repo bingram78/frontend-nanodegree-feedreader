@@ -1,4 +1,31 @@
-# Project Overview
+## FeedmReader Testing Project
+
+### Explanation:
+This project is part of the Udacity Front End Nanodegree. It attempts to utilize the concept of test-driven development. It utilizes the [Jasmine](http://jasmine.github.io/) suite of tools for testing portions of your site as you develop. Tests are written in anticipation of how the site should function.
+
+
+### How to View this Project:
+##### Easy way (but the best):
+1. Download (or clone) this repo to your computer
+1. Unzip the file and navigate to the unzipped folder
+1. Locate the file titled index.html
+1. Open this index.html file in your web browser
+1. All should be working :)
+
+##### Better way:
+1. Follow steps 1 and 2 above
+1. Open Terminal and cd into the folder containing the index.html file
+1. Be sure you have python installed (type: ```python --version```)
+1. If you do not have python then follow the easy way above ;)
+1. Type the following command: ```python -m SimpleHTTPServer 8000```
+1. Open your web browser and enter ```0.0.0.0:8000``` as the url.
+1. Voila! You can use this simple app.
+
+
+
+*Note: Below is the description of the project from Udacity and the requirements for completion.*
+
+## Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
@@ -44,5 +71,5 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
+20. When complete - all of your tests should pass.
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
